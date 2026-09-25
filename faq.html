@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dúvidas & Contato — MAHAUL EXCLUSIVE</title>
+  <meta name="description" content="Perguntas frequentes e formulário de contato do MAHAUL EXCLUSIVE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho rolado">
+    <a href="index.html" class="logo">MAHAUL <span>EXCLUSIVE</span></a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="lineup.html">Line-up</a>
+      <a href="ingressos.html">Ingressos</a>
+      <a href="informacoes.html">Informações</a>
+      <a href="faq.html" class="ativo">Dúvidas</a>
+    </nav>
+    <button class="botao-menu-mobile" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <section class="topo-pagina">
+      <div class="container">
+        <p class="rotulo">Perguntas frequentes</p>
+        <h1>DÚVIDAS & CONTATO</h1>
+        <p>As respostas mais comuns sobre o MAHAUL EXCLUSIVE — e um jeito de falar com a gente.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+
+        <div class="lista-faq">
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              O MAHAUL EXCLUSIVE é somente para casais?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Não. O evento foi pensado especialmente para casais, mas qualquer pessoa pode participar.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Posso comprar ingresso para apenas uma noite?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Sim. É possível escolher uma única noite ou adquirir o ingresso para os três dias.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              A alimentação está incluída no ingresso?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Sim. A alimentação está incluída na experiência do evento.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Posso escolher minha mesa?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Sim. Durante a compra, o visitante poderá escolher sua mesa diretamente pelo site.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Qual é o horário do evento?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>O MAHAUL EXCLUSIVE acontece das 20h30 às 2h.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Existe idade mínima?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Não há uma idade mínima específica definida para o evento.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Onde acontece o evento?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>No Mahaul Bar, localizado no Itaim Bibi, em São Paulo.</p>
+            </div>
+          </div>
+
+          <div class="item-faq">
+            <button class="pergunta-faq">
+              Posso escolher qual dia quero ir?
+              <span class="icone-faq"></span>
+            </button>
+            <div class="resposta-faq">
+              <p>Sim. É possível escolher entre sexta, sábado ou domingo, de acordo com o ingresso escolhido.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===================== FORMULÁRIO DE CONTATO ===================== -->
+        <div class="bloco-mesas bloco-contato">
+          <p class="rotulo">Ainda com dúvidas?</p>
+          <h2 class="titulo-secao">Fale com a organização</h2>
+
+          <form class="form-contato">
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="campo">
+              <label for="assunto">Assunto</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Sobre o que você quer falar?" required>
+            </div>
+            <div class="campo">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem"></textarea>
+            </div>
+            <div class="grupo-botoes">
+              <button type="submit" class="botao botao-preenchido">Enviar mensagem</button>
+            </div>
+            <p class="confirmacao-envio"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p class="rodape-marca">MAHAUL <span>EXCLUSIVE</span></p>
+      <nav class="rodape-menu">
+        <a href="index.html">Início</a>
+        <a href="lineup.html">Line-up</a>
+        <a href="ingressos.html">Ingressos</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="faq.html">Dúvidas</a>
+      </nav>
+    </div>
+    <div class="container rodape-linha-baixo">
+      <p>MAHAUL EXCLUSIVE — 2026</p>
+      <p>Desenvolvido por: [Nome 1] e [Nome 2]</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

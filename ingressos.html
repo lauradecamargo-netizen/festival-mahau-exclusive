@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingressos — MAHAUL EXCLUSIVE</title>
+  <meta name="description" content="Escolha sua noite, seu plano e sua mesa para o MAHAUL EXCLUSIVE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho rolado">
+    <a href="index.html" class="logo">MAHAUL <span>EXCLUSIVE</span></a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="lineup.html">Line-up</a>
+      <a href="ingressos.html" class="ativo">Ingressos</a>
+      <a href="informacoes.html">Informações</a>
+      <a href="faq.html">Dúvidas</a>
+    </nav>
+    <button class="botao-menu-mobile" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <section class="topo-pagina">
+      <div class="container">
+        <p class="rotulo">Reserve sua noite</p>
+        <h1>INGRESSOS</h1>
+        <p>Escolha a noite, o plano e a mesa onde vai viver o MAHAUL EXCLUSIVE.</p>
+      </div>
+    </section>
+
+    <!-- ===================== SELETOR DE NOITE ===================== -->
+    <section class="secao" style="padding-bottom: 0;">
+      <div class="container">
+        <p class="rotulo">1. Escolha a noite</p>
+        <div class="seletor-noites">
+          <button class="pilula-noite ativa">Sexta — 13/11 — Renata Vale</button>
+          <button class="pilula-noite">Sábado — 14/11 — Theo Amaral</button>
+          <button class="pilula-noite">Domingo — 15/11 — Isadora Blanc</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLANOS ===================== -->
+    <section class="secao" style="padding-top: 2rem;">
+      <div class="container">
+        <p class="rotulo">2. Escolha o plano</p>
+
+        <div class="planos">
+          <div class="plano">
+            <p class="plano-nome">Single Night</p>
+            <p class="plano-descricao">
+              Entrada para uma noite do MAHAUL EXCLUSIVE para duas pessoas, com
+              alimentação incluída e escolha da mesa.
+            </p>
+            <p class="plano-preco">R$ 380<small>o casal, por noite</small></p>
+            <a href="#mesas" class="botao botao-preenchido">Escolher mesa</a>
+          </div>
+
+          <div class="plano plano-destaque">
+            <p class="rotulo">Mais escolhido</p>
+            <p class="plano-nome">Couple Experience</p>
+            <p class="plano-descricao">
+              Experiência para duas pessoas em uma noite, com alimentação incluída,
+              escolha da mesa e benefícios especiais durante o evento.
+            </p>
+            <p class="plano-preco">R$ 520<small>o casal, por noite</small></p>
+            <a href="#mesas" class="botao botao-preenchido">Escolher mesa</a>
+          </div>
+
+          <div class="plano">
+            <p class="plano-nome">Full Experience</p>
+            <p class="plano-descricao">
+              Acesso para duas pessoas durante os três dias do evento, com
+              alimentação incluída, escolha da mesa e benefícios exclusivos.
+            </p>
+            <p class="plano-preco">R$ 1.290<small>o casal, três noites</small></p>
+            <a href="#mesas" class="botao botao-preenchido">Escolher mesa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ESCOLHA DE MESA ===================== -->
+    <section class="secao secao-cafe bloco-mesas" id="mesas">
+      <div class="container" style="text-align: center;">
+        <p class="rotulo">3. Escolha sua mesa</p>
+        <h2 class="titulo-secao" style="margin: 0 auto;">Simulação do salão do Mahaul Bar</h2>
+
+        <div class="palco-indicador">PALCO MAHAUL</div>
+
+        <div class="mapa-mesas" aria-label="Simulação de mapa de mesas">
+          <div class="mesa">01</div>
+          <div class="mesa">02</div>
+          <div class="mesa ocupada">03</div>
+          <div class="mesa">04</div>
+          <div class="mesa">05</div>
+          <div class="mesa ocupada">06</div>
+          <div class="mesa">07</div>
+          <div class="mesa selecionada">08</div>
+          <div class="mesa">09</div>
+          <div class="mesa">10</div>
+          <div class="mesa ocupada">11</div>
+          <div class="mesa">12</div>
+        </div>
+
+        <div class="legenda-mesas">
+          <span class="legenda-item"><span class="legenda-caixa"></span> Disponível</span>
+          <span class="legenda-item"><span class="legenda-caixa selecionada"></span> Selecionada</span>
+          <span class="legenda-item"><span class="legenda-caixa ocupada"></span> Ocupada</span>
+        </div>
+
+        <p class="aviso-simulado">
+          Simulação visual do mapa de mesas — a escolha real acontece durante a compra do ingresso.
+          Os botões desta página não finalizam uma compra de verdade.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p class="rodape-marca">MAHAUL <span>EXCLUSIVE</span></p>
+      <nav class="rodape-menu">
+        <a href="index.html">Início</a>
+        <a href="lineup.html">Line-up</a>
+        <a href="ingressos.html">Ingressos</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="faq.html">Dúvidas</a>
+      </nav>
+    </div>
+    <div class="container rodape-linha-baixo">
+      <p>MAHAUL EXCLUSIVE — 2026</p>
+      <p>Desenvolvido por: [Nome 1] e [Nome 2]</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

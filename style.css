@@ -1,0 +1,1020 @@
+/* ==========================================================================
+   MAHAUL EXCLUSIVE — style.css
+   Arquivo único de estilos para as 5 páginas do site.
+   Organizado por seções para facilitar a leitura.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS E RESET
+   -------------------------------------------------------------------------- */
+   :root {
+    --preto: #0D0B0B;
+    --vinho: #571C2A;
+    --dourado: #C5A15A;
+    --creme: #F1E8D8;
+    --cafe: #2A1D19;
+  
+    --creme-suave: rgba(241, 232, 216, 0.7);
+    --creme-linha: rgba(241, 232, 216, 0.14);
+    --dourado-suave: rgba(197, 161, 90, 0.5);
+  
+    --fonte-titulo: "Playfair Display", serif;
+    --fonte-texto: "Montserrat", sans-serif;
+  
+    --largura-maxima: 1180px;
+    --espaco-secao: 8rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--preto);
+    color: var(--creme);
+    font-family: var(--fonte-texto);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    color: var(--creme);
+    line-height: 1.2;
+  }
+  
+  button {
+    font-family: var(--fonte-texto);
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  
+  .secao {
+    padding: var(--espaco-secao) 0;
+  }
+  
+  .secao-vinho {
+    background-color: var(--vinho);
+  }
+  
+  .secao-cafe {
+    background-color: var(--cafe);
+  }
+  
+  .rotulo {
+    display: inline-block;
+    font-family: var(--fonte-texto);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--dourado);
+    margin-bottom: 1rem;
+  }
+  
+  .titulo-secao {
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    max-width: 34rem;
+  }
+  
+  .texto-intro {
+    font-size: 1.05rem;
+    color: var(--creme-suave);
+    max-width: 38rem;
+    margin-top: 1.2rem;
+  }
+  
+  .linha-fina {
+    width: 3.5rem;
+    height: 1px;
+    background-color: var(--dourado);
+  }
+  
+  /* --------------------------------------------------------------------------
+     2. BOTÕES
+     -------------------------------------------------------------------------- */
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 2.1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--dourado);
+    color: var(--creme);
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+  
+  .botao-preenchido {
+    background-color: var(--dourado);
+    color: var(--preto);
+  }
+  
+  .botao-preenchido:hover {
+    background-color: transparent;
+    color: var(--dourado);
+  }
+  
+  .botao:not(.botao-preenchido):hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+  }
+  
+  .grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.2rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     3. CABEÇALHO / NAVEGAÇÃO
+     -------------------------------------------------------------------------- */
+  .cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 2.5rem;
+    background: linear-gradient(to bottom, rgba(13, 11, 11, 0.9), rgba(13, 11, 11, 0));
+  }
+  
+  .cabecalho.rolado {
+    background-color: rgba(13, 11, 11, 0.94);
+    border-bottom: 1px solid var(--creme-linha);
+  }
+  
+  .logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    letter-spacing: 0.03em;
+    color: var(--creme);
+  }
+  
+  .logo span {
+    color: var(--dourado);
+  }
+  
+  .menu {
+    display: flex;
+    gap: 2.4rem;
+  }
+  
+  .menu a {
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: var(--creme-suave);
+    position: relative;
+    padding-bottom: 0.3rem;
+  }
+  
+  .menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--dourado);
+    transition: width 0.3s ease;
+  }
+  
+  .menu a:hover,
+  .menu a.ativo {
+    color: var(--creme);
+  }
+  
+  .menu a:hover::after,
+  .menu a.ativo::after {
+    width: 100%;
+  }
+  
+  .botao-menu-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 110;
+  }
+  
+  .botao-menu-mobile span {
+    width: 24px;
+    height: 1px;
+    background-color: var(--creme);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* --------------------------------------------------------------------------
+     4. RODAPÉ
+     -------------------------------------------------------------------------- */
+  .rodape {
+    background-color: var(--cafe);
+    padding: 3.5rem 0 2.2rem;
+    border-top: 1px solid var(--creme-linha);
+  }
+  
+  .rodape .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .rodape-marca {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+  }
+  
+  .rodape-marca span {
+    color: var(--dourado);
+  }
+  
+  .rodape-menu {
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+  }
+  
+  .rodape-menu a {
+    font-size: 0.8rem;
+    color: var(--creme-suave);
+  }
+  
+  .rodape-menu a:hover {
+    color: var(--dourado);
+  }
+  
+  .rodape-linha-baixo {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--creme-linha);
+    font-size: 0.75rem;
+    color: var(--creme-suave);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     5. CENA ATMOSFÉRICA (substitui fotografias — ver README sobre img/)
+     -------------------------------------------------------------------------- */
+  .cena {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(197, 161, 90, 0.16), transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(87, 28, 42, 0.55), transparent 60%),
+      linear-gradient(160deg, #1a1415 0%, var(--preto) 65%);
+    overflow: hidden;
+  }
+  
+  .cena::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      115deg,
+      rgba(241, 232, 216, 0.025) 0px,
+      rgba(241, 232, 216, 0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    opacity: 0.5;
+  }
+  
+  .cena-moldura {
+    position: relative;
+    border: 1px solid var(--dourado-suave);
+  }
+  
+  /* --------------------------------------------------------------------------
+     6. HERO — index.html
+     -------------------------------------------------------------------------- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+  }
+  
+  .hero .container {
+    width: 100%;
+  }
+  
+  .hero-datas {
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--dourado);
+    margin-bottom: 1.4rem;
+  }
+  
+  .hero-titulo {
+    font-size: clamp(3.2rem, 9vw, 7.2rem);
+    letter-spacing: 0.01em;
+  }
+  
+  .hero-frase {
+    margin-top: 1.6rem;
+    font-family: var(--fonte-titulo);
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    color: var(--creme-suave);
+    max-width: 30rem;
+  }
+  
+  .hero-local {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--creme-suave);
+  }
+  
+  /* --------------------------------------------------------------------------
+     7. SOBRE — index.html
+     -------------------------------------------------------------------------- */
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .sobre-numero {
+    font-family: var(--fonte-titulo);
+    font-size: 4.5rem;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--dourado-suave);
+  }
+  
+  .sobre-texto p + p {
+    margin-top: 1.1rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     8. DESTAQUES (três noites) — index.html
+     -------------------------------------------------------------------------- */
+  .noites {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--creme-linha);
+  }
+  
+  .noite-card {
+    padding: 2.4rem 1.8rem;
+    border-right: 1px solid var(--creme-linha);
+    transition: background-color 0.35s ease;
+  }
+  
+  .noite-card:last-child {
+    border-right: none;
+  }
+  
+  .noite-card:hover {
+    background-color: rgba(197, 161, 90, 0.05);
+  }
+  
+  .noite-data {
+    font-size: 0.8rem;
+    color: var(--dourado);
+    letter-spacing: 0.03em;
+  }
+  
+  .noite-dia {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--creme-suave);
+  }
+  
+  .noite-artista {
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     9. GASTRONOMIA + MESA — index.html
+     -------------------------------------------------------------------------- */
+  .duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  
+  .duo-item {
+    padding: 4.5rem 3rem;
+  }
+  
+  .duo-item:first-child {
+    border-right: 1px solid var(--creme-linha);
+  }
+  
+  .duo-item h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .duo-item p {
+    color: var(--creme-suave);
+    max-width: 26rem;
+  }
+  
+  .destaque-inline {
+    display: inline-block;
+    margin-top: 1.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: var(--dourado);
+    border-top: 1px solid var(--dourado-suave);
+    padding-top: 0.8rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     10. CHAMADA FINAL — index.html
+     -------------------------------------------------------------------------- */
+  .chamada-final {
+    text-align: center;
+    padding: 7rem 0;
+  }
+  
+  .chamada-final .linha-fina {
+    margin: 0 auto 1.6rem;
+  }
+  
+  .chamada-final h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+  
+  .chamada-final .grupo-botoes {
+    justify-content: center;
+  }
+  
+  /* --------------------------------------------------------------------------
+     11. TOPO DE PÁGINA INTERNA (lineup, ingressos, informações, faq)
+     -------------------------------------------------------------------------- */
+  .topo-pagina {
+    padding: 10rem 0 4rem;
+    border-bottom: 1px solid var(--creme-linha);
+  }
+  
+  .topo-pagina h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+  }
+  
+  .topo-pagina p {
+    margin-top: 1rem;
+    color: var(--creme-suave);
+    max-width: 34rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     12. LINE-UP — lineup.html
+     -------------------------------------------------------------------------- */
+  .dia-bloco {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--creme-linha);
+  }
+  
+  .dia-cabecalho {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .dia-cabecalho h2 {
+    font-size: 2rem;
+  }
+  
+  .dia-cabecalho span {
+    font-size: 0.9rem;
+    color: var(--dourado);
+  }
+  
+  .artistas-dia {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .artista-principal {
+    grid-row: span 2;
+    position: relative;
+    padding: 2.6rem;
+    border: 1px solid var(--dourado-suave);
+  }
+  
+  .artista-principal .rotulo {
+    color: var(--dourado);
+  }
+  
+  .artista-principal h3 {
+    font-size: 2.4rem;
+    margin-top: 1.6rem;
+  }
+  
+  .artista-principal .artista-info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--creme-suave);
+  }
+  
+  .artista-secundario {
+    padding: 1.8rem;
+    background-color: var(--cafe);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .artista-secundario h4 {
+    font-size: 1.3rem;
+  }
+  
+  .artista-secundario .artista-info {
+    margin-top: 1.2rem;
+    font-size: 0.8rem;
+    color: var(--creme-suave);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     13. INGRESSOS — ingressos.html
+     -------------------------------------------------------------------------- */
+  .seletor-noites {
+    display: flex;
+    gap: 1rem;
+    margin: 3rem 0 4rem;
+    flex-wrap: wrap;
+  }
+  
+  .pilula-noite {
+    padding: 0.8rem 1.6rem;
+    border: 1px solid var(--creme-linha);
+    font-size: 0.82rem;
+    color: var(--creme-suave);
+    transition: all 0.3s ease;
+  }
+  
+  .pilula-noite.ativa,
+  .pilula-noite:hover {
+    border-color: var(--dourado);
+    color: var(--dourado);
+  }
+  
+  .planos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: var(--creme-linha);
+  }
+  
+  .plano {
+    background-color: var(--preto);
+    padding: 3rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .plano.plano-destaque {
+    background-color: var(--vinho);
+  }
+  
+  .plano-nome {
+    font-size: 1.5rem;
+  }
+  
+  .plano-descricao {
+    margin-top: 0.8rem;
+    font-size: 0.88rem;
+    color: var(--creme-suave);
+    flex-grow: 1;
+  }
+  
+  .plano-preco {
+    margin-top: 2.2rem;
+    font-family: var(--fonte-titulo);
+    font-size: 2.3rem;
+    color: var(--dourado);
+  }
+  
+  .plano-preco small {
+    font-family: var(--fonte-texto);
+    font-size: 0.75rem;
+    color: var(--creme-suave);
+    display: block;
+    margin-top: 0.3rem;
+  }
+  
+  .plano .botao {
+    margin-top: 2rem;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .bloco-mesas {
+    margin-top: 6rem;
+  }
+  
+  .palco-indicador {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--dourado-suave);
+    color: var(--dourado);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    max-width: 20rem;
+    margin: 2.5rem auto 0;
+  }
+  
+  .mapa-mesas {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.9rem;
+    max-width: 34rem;
+    margin: 1.6rem auto 0;
+  }
+  
+  .mesa {
+    aspect-ratio: 1;
+    border: 1px solid var(--dourado-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: var(--creme-suave);
+    transition: all 0.25s ease;
+  }
+  
+  .mesa:hover {
+    border-color: var(--dourado);
+    color: var(--creme);
+  }
+  
+  .mesa.ocupada {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  
+  .mesa.selecionada {
+    background-color: var(--dourado);
+    color: var(--preto);
+    border-color: var(--dourado);
+  }
+  
+  .legenda-mesas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--creme-suave);
+  }
+  
+  .legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .legenda-caixa {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid var(--dourado-suave);
+    display: inline-block;
+  }
+  
+  .legenda-caixa.ocupada { opacity: 0.3; }
+  .legenda-caixa.selecionada { background-color: var(--dourado); border-color: var(--dourado); }
+  
+  .aviso-simulado {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--creme-suave);
+    font-style: italic;
+  }
+  
+  /* --------------------------------------------------------------------------
+     14. INFORMAÇÕES — informacoes.html
+     -------------------------------------------------------------------------- */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background-color: var(--creme-linha);
+  }
+  
+  .info-item {
+    background-color: var(--preto);
+    padding: 3rem;
+  }
+  
+  .info-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .info-item p,
+  .info-item li {
+    color: var(--creme-suave);
+    font-size: 0.92rem;
+  }
+  
+  .info-item ul li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--creme-linha);
+  }
+  
+  .info-item ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .mapa-espaco {
+    margin-top: 5rem;
+    height: 26rem;
+    border: 1px solid var(--dourado-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--creme-suave);
+    font-size: 0.85rem;
+    padding: 2rem;
+  }
+  
+  /* --------------------------------------------------------------------------
+     15. FAQ — faq.html
+     -------------------------------------------------------------------------- */
+  .lista-faq {
+    max-width: 46rem;
+  }
+  
+  .item-faq {
+    border-bottom: 1px solid var(--creme-linha);
+  }
+  
+  .pergunta-faq {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    text-align: left;
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    color: var(--creme);
+  }
+  
+  .pergunta-faq .icone-faq {
+    flex-shrink: 0;
+    width: 1.4rem;
+    height: 1px;
+    background-color: var(--dourado);
+    position: relative;
+  }
+  
+  .pergunta-faq .icone-faq::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1.4rem;
+    background-color: var(--dourado);
+    top: -0.7rem;
+    left: 0.7rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .item-faq.aberto .icone-faq::after {
+    transform: rotate(90deg);
+  }
+  
+  .resposta-faq {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  
+  .resposta-faq p {
+    padding-bottom: 1.8rem;
+    color: var(--creme-suave);
+    max-width: 40rem;
+  }
+  
+  .bloco-contato {
+    margin-top: 6rem;
+  }
+  
+  .form-contato {
+    max-width: 34rem;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .campo label {
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--dourado);
+  }
+  
+  .campo input,
+  .campo textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--creme-linha);
+    padding: 0.7rem 0;
+    color: var(--creme);
+    font-family: var(--fonte-texto);
+    font-size: 0.95rem;
+  }
+  
+  .campo input:focus,
+  .campo textarea:focus {
+    outline: none;
+    border-bottom-color: var(--dourado);
+  }
+  
+  .campo textarea {
+    resize: vertical;
+    min-height: 6rem;
+  }
+  
+  .confirmacao-envio {
+    display: none;
+    font-size: 0.85rem;
+    color: var(--dourado);
+  }
+  
+  .confirmacao-envio.visivel {
+    display: block;
+  }
+  
+  /* --------------------------------------------------------------------------
+     16. ACESSIBILIDADE
+     -------------------------------------------------------------------------- */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 1px solid var(--dourado);
+    outline-offset: 3px;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* --------------------------------------------------------------------------
+     17. RESPONSIVIDADE
+     -------------------------------------------------------------------------- */
+  @media (max-width: 900px) {
+    :root {
+      --espaco-secao: 5rem;
+    }
+  
+    .sobre-grid,
+    .duo-grid,
+    .artistas-dia,
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .duo-item:first-child {
+      border-right: none;
+      border-bottom: 1px solid var(--creme-linha);
+    }
+  
+    .artista-principal {
+      grid-row: auto;
+    }
+  
+    .noites {
+      grid-template-columns: 1fr;
+    }
+  
+    .noite-card {
+      border-right: none;
+      border-bottom: 1px solid var(--creme-linha);
+    }
+  
+    .planos {
+      grid-template-columns: 1fr;
+    }
+  
+    .mapa-mesas {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 74%;
+      max-width: 20rem;
+      background-color: var(--cafe);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 3rem;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+    }
+  
+    .menu.aberto {
+      transform: translateX(0);
+    }
+  
+    .botao-menu-mobile {
+      display: flex;
+    }
+  
+    .botao-menu-mobile.aberto span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+  
+    .botao-menu-mobile.aberto span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .botao-menu-mobile.aberto span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  
+    .hero {
+      align-items: center;
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .container {
+      padding: 0 1.4rem;
+    }
+  
+    .duo-item,
+    .info-item {
+      padding: 2.4rem 1.6rem;
+    }
+  
+    .mapa-mesas {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .rodape .container,
+    .rodape-linha-baixo {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
